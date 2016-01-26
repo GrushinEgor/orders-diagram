@@ -1,0 +1,34 @@
+.text{
+	@include m('base') {color: $base-font-color;}
+	@include m('main') {color: $main-color;}
+	@include m('accent') {color: $accent-color;}
+
+	@include m('bold') {font-weight: 700;}
+
+	@include m('lowercase') {text-transform: lowercase;}
+	@include m('uppercase') {text-transform: uppercase;}
+
+	@include m('center') {text-align: center;}
+	@include m('left') {text-align: left;}
+	@include m('right') {text-align: right;}
+
+
+	@include m('fail') {color: $fail-font-color;}
+	@include m('success') {color: $success-font-color;}
+}
+
+
+
+.float{
+	@include m('left') {
+		float: left;
+	}
+	@include m('right') {
+		float: right;
+	}
+}
+
+
+.blur-me{
+	@include blur;	
+}

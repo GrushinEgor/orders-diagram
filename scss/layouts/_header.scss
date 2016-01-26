@@ -1,0 +1,17 @@
+.header{
+	@include clearfix;
+	@include e('wrapper'){
+		@include outer-container;
+		@include clearfix;
+		// @include media($small-screen-up){
+		// 	@include outer-container($screen-xs);
+		// }
+		// @include media($medium-screen-up){
+		// 	@include outer-container($screen-sm);
+		// } 	
+	}
+
+	
+}
+
+

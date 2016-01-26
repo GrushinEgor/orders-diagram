@@ -1,0 +1,58 @@
+/// Block Element
+/// @access public
+/// @param {String} $element - Element's name
+@mixin element($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+/// Block Modifier
+/// @access public
+/// @param {String} $modifier - Modifier's name
+@mixin modifier($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}
+/// @alias element
+@mixin e($element) {
+    @include element($element)  {
+        @content;
+    }
+}
+
+/// @alias modifier
+@mixin m($modifier) {
+    @include modifier($modifier) {
+        @content;
+    }
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.field-validation-error {
+    color: #D83636 !important;
+}
+
+.field-validation-valid {
+    display: none !important;
+}
+
+.input-validation-error {
+    border: 1px solid #f00 !important;
+}
+
+.validation-summary-errors {
+    color: #D83636 !important;
+}
+
+.validation-summary-valid {
+    display: none !important;
+}
+
+@import 'plugins/plugins-dir';
+@import 'base/base-dir';
+@import 'modules/modules-dir';
+@import 'layouts/layouts-dir';

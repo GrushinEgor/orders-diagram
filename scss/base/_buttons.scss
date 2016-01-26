@@ -1,0 +1,20 @@
+.button{
+	
+	&:hover, &:focus {
+		
+		outline: none;
+	}
+	&:active{
+		
+	}
+	@include m('accent') {
+		background:$accent-color;
+	}
+	@include m('big') {
+		
+	}
+	@include m('full-width') {
+		width: 100%;
+	}
+	
+}

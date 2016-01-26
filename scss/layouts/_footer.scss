@@ -1,0 +1,7 @@
+.footer{
+	@include e('wrapper'){
+		@include clearfix;
+	}
+	
+}
+

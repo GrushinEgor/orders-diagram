@@ -1,0 +1,24 @@
+{
+  "name": "startup-frontend-project",
+  "homepage": "https://github.com/GrushinEgor/startup-frontend-project",
+  "authors": [
+    "Wimm <egorgrushin@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "underscore": "~1.8.3",
+    "angular": "~1.4.9",
+    "jquery": "~2.2.0",
+    "react": "~0.14.6"
+  }
+}

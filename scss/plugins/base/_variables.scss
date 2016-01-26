@@ -1,0 +1,59 @@
+// Typography
+
+
+$base-font-family:  $base-font;
+
+// Font Sizes
+$base-font-size: 13px;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+
+// Backgrounds
+$site-background-color: #fff;
+
+
+$base-font-color: #000;
+
+$accent-color: #fb9011;
+$main-color: #5dcaaf;
+$fail-font-color: #f00;
+$success-font-color: #0f0;
+
+// // Border
+// $base-border-color: $light-gray;
+// $base-border: 1px solid $base-border-color;
+
+// // Forms
+// $form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+// $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+$screen-xs: 480px; $screen-xs-min: $screen-xs; $screen-phone: $screen-xs-min;
+$screen-sm: 768px; $screen-sm-min: $screen-sm; $screen-tablet: $screen-sm-min;
+$screen-md: 1366px; $screen-md-min: $screen-md; $screen-desktop: $screen-md-min;
+
+$screen-xs-max: $screen-xs - 1; $screen-sm-max: $screen-md-min - 1;
+
+ $small-screen-up: new-breakpoint(max-width $screen-xs-max 4); //0 - 480px phones
+
+ $medium-screen-up: new-breakpoint(min-width $screen-sm-max max-width $screen-sm-max 4);  //480px - 768px tablet
+
+ $large-screen-up: new-breakpoint(min-width $screen-md-min 8);  //768px - 1365px desktop
+
+
+$global-padding-left: 0px;
+$global-padding-right: 0px;
+
+$columns-padding-left: 0px;
+$columns-padding-right: 20px;
+
+
+$image-path: "../img/";	

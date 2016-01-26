@@ -1,0 +1,28 @@
+$icons-path: $image-path + "icons.png";
+
+@mixin ic-modifier($name, $margins: null null null null, $path: $icons-path) {
+	@include m($name) {
+		@include icon($name, $margins, $path);
+	}
+}
+@mixin icon($name, $margins: null null null null, $path: $icons-path) {
+	@extend %ic-base;
+	background-image: url($path);
+	@include margin($margins);
+	@extend %ic-#{$name};
+}
+%ic-base{
+	content: "";
+	display: block;
+	float:left;
+	background: url($icons-path) no-repeat;
+}
+
+.ic{
+	@include m('center') {
+		margin: 0 auto;
+		float: none;
+	}
+	
+	// @include ic-modifier('dota-2');
+}
