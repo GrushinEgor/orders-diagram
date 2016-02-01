@@ -79,7 +79,7 @@ angular.module('Calendar')
 
 
 				var daysCount = end.diff(start, 'days', true) + 1;
-				return 60 * daysCount - 1;
+				return 60 * daysCount + 1;
 			}
 
 			$scope.getLeft = function(item){
@@ -87,7 +87,7 @@ angular.module('Calendar')
 				var end = moment(item.startDate).startOf('day');
 
 				var daysCount = end.diff(start, 'days', true);
-				return 60 * daysCount + 1;
+				return 60 * daysCount;
 			}
 
 			$scope.onDropComplete=function(data,$event, position, day){

@@ -197,8 +197,10 @@ html, body {
     position: absolute;
     top: 0;
     left: 0;
-    height: 50px;
-    pointer-events: initial; }
+    pointer-events: initial;
+    top: -1px;
+    height: 52px;
+    border: 1px solid #000; }
     .calendar__item-wrapper.dragging {
       opacity: 0.5; }
   .calendar__row-day-cells {
