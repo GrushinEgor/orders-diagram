@@ -1,0 +1,50 @@
+<table class="calendar">
+	<tr>
+		<th>
+			<button class="button" ng-click="prevDate()">Prev</button>
+			<button class="button" ng-click="nextDate()">Next</button>
+
+		</th>
+		<th class="calendar__header-days">
+			<ul class="calendar__header-day-cells">
+				<li ng-repeat="day in days" class="calendar__header-day-cell">
+					{{day | moment:'DD.MM'}}
+				</li>
+			</ul>
+		</th>
+	</tr>
+	<tr ng-repeat="position in positions" class="calendar__position-row">
+		<td class="calendar__position_cell">{{position.name}}</td>
+		<td class="calendar__items-container">
+			<ul class="calendar__row-day-cells">
+				<li ng-repeat="day in days" 
+				class="calendar__row-day-cell"
+				ng-drop="true"
+				ng-drop-success="onDropComplete($data,$event, position, day)"
+				ng-click="createItem($event, position, day)">
+				</li>
+			</ul>
+			<ul class="calendar__items">
+				<li class="calendar__item-wrapper" 
+				ng-repeat="item in getItemsByPosition(position)"
+				ng-if="isAvailable(item)"
+				style="width: {{getWidth(item)}}px; left: {{getLeft(item)}}px;" 
+				ng-drag="true"
+				ng-drag-data="item"
+				ng-click="changeItem($event, item)"
+				>
+
+
+				<div class="calendar-item calendar-item--{{item.status.name}}">
+					<span class="calendar-item__number">{{item.name }} </span>
+					<span class="calendar-item__customer">{{item.customer.lastName }} </span>
+				</div>
+
+
+
+
+			</li>
+		</ul>
+	</td>
+</tr>
+</table>

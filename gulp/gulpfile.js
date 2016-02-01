@@ -6,20 +6,27 @@ var rename = require('gulp-rename');
 var uglify = require('gulp-uglify'); 
 var conct = require('gulp-concat'); 
 var ngAnnotate = require('gulp-ng-annotate');
+var mainBowerFiles = require('main-bower-files');
 
 
 
 gulp.task('ext-js', function() { 
+	var src = mainBowerFiles({
+		paths: {
+			bowerDirectory: '../external-libraries',
+			bowerrc: '../.bowerrc',
+			bowerJson: '../bower.json'
+		}
+	});
+	src.push('!../external-libraries/angular/**/*.js');
+	src.push('../external-libraries/ui.bootstrap/ui-bootstrap-tpls-1.0.3.min.js');
 
-	gulp.src([
-		'../external-libraries/**/*.min.js', 
-		'!../external-libraries/angular/*.js',
-		'!../external-libraries/**/src/**/*.js'
-		])
+	gulp.src(src)
 	.pipe(conct('external-libraries.min.js'))
+	.pipe(uglify())
 	.pipe(gulp.dest('../app/static/js/'));
 
-	gulp.src(['../external-libraries/angular/angular.min.js'])
+	gulp.src(['../external-libraries/angular/angular.js'])
 	.pipe(gulp.dest('../app/static/js/'));
 }); 
 
@@ -33,11 +40,11 @@ gulp.task('angular-js', function() {
 		'../project-libraries/app.js'
 		])
 	.pipe(conct('app.js'))
-	.pipe(ngAnnotate({
-		remove: true,
-		add: true,
-		single_quotes: true
-	}))
+	// .pipe(ngAnnotate({
+	// 	remove: true,
+	// 	add: true,
+	// 	single_quotes: true
+	// }))
 	// .pipe(uglify())
 	.pipe(gulp.dest('../app/static/js/'));
 

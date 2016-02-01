@@ -1,0 +1,51 @@
+<form class="calendar-dialog-form">
+
+  <div class="form-group">
+    <label >Model: </label>
+    <select ng-options="position as position.name for position in positions track by position.id" 
+    ng-model="selectedPosition"
+    ng-required="true"
+    class="form-control"></select>
+  </div>
+  <div class="form-group">
+    <label >Last name: </label>
+    <input type="text" 
+    class="form-control"
+    ng-required="true"
+    ng-model="item.customer.lastName">
+  </div>
+
+
+  <div class="form-group">
+    <label >Start date </label>
+    <p class="input-group">
+      <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="item.startDate" is-open="popup1.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+      </span>
+    </p>
+  </div>
+
+
+  <div class="form-group">
+    <label >End date </label>
+    <p class="input-group">
+      <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="item.endDate" is-open="popup2.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+      </span>
+    </p>
+  </div>
+
+  <div class="form-group">
+    <label >Status: </label>
+   
+    <select ng-options="status as status.name for status in statuses track by status.id" 
+    ng-model="selectedStatus"
+    ng-required="true"
+    class="form-control"></select>
+  </select>
+</div>
+<button  class="btn btn-default" ng-click="save()">Save</button>
+<button  class="btn btn-default" ng-click="close()">Cancel</button>
+</form>

@@ -19,6 +19,11 @@
     "underscore": "~1.8.3",
     "angular": "~1.4.9",
     "jquery": "~2.2.0",
-    "react": "~0.14.6"
+    "react": "~0.14.6",
+    "moment": "~2.11.1",
+    "ngDraggable": "~0.1.8"
+  },
+  "devDependencies": {
+    "ngDraggable": "~0.1.8"
   }
 }

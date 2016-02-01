@@ -1,0 +1,117 @@
+.calendar{
+	// -webkit-touch-callout: none; 
+	// -webkit-user-select: none;   
+	// -khtml-user-select: none;    
+	// -moz-user-select: none;      
+	// -ms-user-select: none;      
+	// user-select: none;  
+	border: 1px solid #000;
+	overflow: hidden;
+	@include e('header-days') {
+		@include clearfix;
+		height: 32px;
+
+	}
+	@include e('header-day-cell') {
+		height: 100%;
+		float: left;
+		border-left: 1px solid #000;
+		padding: 5px 10px;
+		width: 60px;
+		
+	}
+	@include e('header-day-cells') {
+		
+		@include clearfix;
+		height: 100%;
+	}
+
+	@include e('position-row') {
+		border: 1px solid #000;
+		height: 50px;
+	}
+	@include e('position_cell') {
+		position: relative;
+		z-index: 2;
+		background: white;
+		padding: 5px 10px;
+	}
+	@include e('items-container') {
+		height: 100%;
+		position: relative;
+	}
+
+	@include e('items') {
+		@include clearfix;
+		height: 50px;
+		position: relative;
+		pointer-events: none
+	}
+	@include e('item-wrapper') {
+		@include position(absolute, 0 null null 0);
+		height: 50px;
+		pointer-events: initial;
+		&.dragging{
+			opacity: 0.5;	
+		}
+	}
+	
+	@include e('row-day-cells') {
+		@include position(absolute, 0 null null 0);
+		@include clearfix;
+		height: 50px;
+
+	}
+	@include e('row-day-cell') {
+		border-left: 1px solid #000;
+		height: 100%;
+		width: 60px;
+		float: left;
+		cursor: pointer;
+		&.drag-enter{
+			background: #ABFF85;
+		}
+	}
+
+
+}
+
+.calendar-item{
+	background: #eee;
+	height: 100%;
+	width: 100%;
+	// border: 1px solid #000;
+	-webkit-touch-callout: none; 
+	-webkit-user-select: none;   
+	-khtml-user-select: none;    
+	-moz-user-select: none;      
+	-ms-user-select: none;      
+	user-select: none;           
+	cursor: pointer;
+	overflow: hidden;
+	@include clearfix;
+	padding-left: 10px;
+	padding-top: 2px;
+	@include e('name') {
+		display: block;
+	}
+	@include e('number') {
+		display: block;
+	}
+	@include m('ready') {
+		background: #00f;
+	}
+	@include m('in-progress') {
+		background: #ff0;
+	}
+
+	@include m('denied') {
+		background: #eee;
+	}
+
+
+}
+
+.calendar-dialog-form{
+	padding: 10px;
+}

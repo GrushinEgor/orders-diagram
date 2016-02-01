@@ -8,15 +8,22 @@
 	<link rel="stylesheet" href="static/css/font-awesome.min.css" type="text/css">
 	<link rel="stylesheet" href="static/css/app.css" type="text/css">
 
-	<script src="static/js/angular.min.js"></script>
+	<script src="static/js/angular.js"></script>
 
 </head>
 <body ng-controller="MainCtrl">
 
 
+	<calendar items="items" 
+	positions="positions"
+	duration="duration"
+	start-date="startDate"
+	date-changed="dateChanged(newDate)" 
+	item-changed="itemChanged(item)"
+	item-created="itemCreated(item)"
+	statuses="statuses"
+	class="main-calendar"></calendar>
 
-
-	
 
 	<script src="static/js/external-libraries.min.js"></script>
 	<script src="static/js/app.js"></script>

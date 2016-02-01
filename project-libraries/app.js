@@ -4,4 +4,11 @@
 *
 * Description
 */
-angular.module('app', ['ui.bootstrap']);
+angular.module('app', ['ui.bootstrap', 'Calendar']);
+
+/**
+* Calendar Module
+*
+* Description
+*/
+angular.module('Calendar', ['ui.bootstrap','ngDraggable'])
